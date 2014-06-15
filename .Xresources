@@ -1,0 +1,21 @@
+# Configuraciones pa'l 'ATERM'
+Aterm.font: 9x15
+Aterm.transparent: True
+Aterm.reverseVideo: True
+
+# De acuerdo con 'man emacs'
+emacs.font: 9x15
+emacs.bitmapIcon: on
+
+# Por si te llega a aburrir el color por default del Emacs
+# Establece el color del fondo como lo establece el comando
+# 'colorscheme darkblue' del gvim. Los colores por default
+# del Emacs son 'Wheat' en primer plano y 'DarkSlateGray'
+# en el fondo
+emacs.background: #000041
+
+# Para que el xterm se parezca al konsole
+XTerm.VT100.background: lightyellow
+
+# Lineas que guardara el xterm, 64 por default, 1024 x 10
+XTerm.VT100.saveLines: 10240
