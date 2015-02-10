@@ -1,9 +1,10 @@
 ;; $HOME/.emacs -*-emacs-lisp-*-
 
-;; Setting up the diary file
-(setq diary-file "~/.emacs_diary")
+;; Setting the diary's file.
+;; NOTE: This line MUST precede the next one
+(setq diary-file "~/.emacs-diary")
 
-;; Setting the appointments list
+;; Hooking the diary's file appointments
 (display-time)
 (add-hook 'diary-hook 'appt-make-list)
 (diary 0)
@@ -18,12 +19,18 @@
 (setq transient-mark-mode t)
 
 ;; Turn on the mouse wheel message in X
-;;(mouse-wheel-mode)
+(mouse-wheel-mode)
 
 ;; Enabling zone amusement
 (zone)
 
-;; Add F1 support to man pages
+;; From man man:
+;;
+;; If you add the line
+;; (global-set-key [(f1)] (lambda () (interactive) (manual-entry (current-word))))
+;;
+;; to your .emacs file, then hitting F1 will give you the man page for the
+;; library call at the current cursor position.
 (global-set-key [(f1)] (lambda()(interactive)(manual-entry (current-word))))
 
 ;; Show line numbers
@@ -35,45 +42,20 @@
 ;; Disable backup files
 (setq make-backup-files nil)
 
-
-
-
-
-;; Setting the diary's file.
-;; NOTE: This line MUST precede the next one
-(setq diary-file "~/.emacs-diary")
-
-;; Hooking the diary's file appointments
-(display-time)
-(add-hook 'diary-hook 'appt-make-list)
-(diary 0)
-
-;; Enabling mouse wheel for scrolling
-(mouse-wheel-mode)
-
-;; From man man:
-;;
-;; If you add the line
-;; (global-set-key [(f1)] (lambda () (interactive) (manual-entry (current-word))))
-;;
-;; to your .emacs file, then hitting F1 will give you the man page for the
-;; library call at the current cursor position.
-(global-set-key [(f1)] (lambda() (interactive) (manual-entry(current-word))))
-
 ;; Enable tool-bar mode
-;; (tool-bar-mode)
-
-;; Eanbling zone
-(zone)
+(tool-bar-mode)
 
 ;; Using a mouse in terminal emulators
 (xterm-mouse-mode t)
 
-;; To see in which column are we
-(setq column-number-mode t)
-
 ;; Truncate lines
-;; (setq truncate-lines t)
+(setq truncate-lines t)
 
 ;; Set the frame's title bar
-;; (setq frame-title-format "emacs - %f")
+(setq frame-title-format "emacs - %f")
+
+;; Set the default font face for X11 sessions
+(set-default-font "Monospace-11")
+
+;; Save history files
+(savehist-mode 1)
