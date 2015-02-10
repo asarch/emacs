@@ -4,6 +4,9 @@
 ;; NOTE: This line MUST precede the next one
 (setq diary-file "~/.emacs-diary")
 
+;; 24 Hour time format
+(setq display-time-24hr-format t)
+
 ;; Hooking the diary's file appointments
 (display-time)
 (add-hook 'diary-hook 'appt-make-list)
