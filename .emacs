@@ -62,3 +62,6 @@
 
 ;; Save history files
 (savehist-mode 1)
+
+;; Highlight the current line
+(global-hl-line-mode)
