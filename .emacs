@@ -65,3 +65,7 @@
 
 ;; Highlight the current line
 (global-hl-line-mode)
+
+;; Save current desktop session
+;; More info: https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html
+(desktop-save-mode 1)
