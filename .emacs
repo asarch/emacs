@@ -1,5 +1,43 @@
 ;; $HOME/.emacs -*-emacs-lisp-*-
 
+;;--------------------------------------------------------------------
+;; SLIME support
+;;--------------------------------------------------------------------
+
+;; From: http://melpa.org/#/getting-started
+;; M-x package-refresh-contents
+;; M-x package-install RET slime RET
+
+;; NOTE
+;; QuickLisp es para SBCL.
+;; Su metodo de instalacion lo puedes checar en:
+;; https://www.quicklisp.org/beta/
+;; Pero rapidamente:
+;; 1. Descarga el script "quicklist.lisp" y guardalo en $HOME/Projects
+;; 2. Carga el script:
+;;    [$] sbcl --load $HOME/Projects/quiclist.lisp
+;; 3. Ejectualo:
+;;    sbcl> (quicklisp-quickstart:install)
+;; 4. Sigue las instrucciones para agregar las extensiones.
+
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
+(package-initialize)
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 ;; Setting the diary's file.
 ;; NOTE: This line MUST precede the next one
 (setq diary-file "~/.emacs-diary")
