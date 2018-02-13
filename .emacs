@@ -50,6 +50,8 @@
 ;;--------------------------------------------------------------------
 
 ;; From: https://common-lisp.net/project/slime/doc/html/Installation.html#Installation
+;; - Para iniciar Slime: M-x slime
+;; - Para cambiar el interprete: C-u M-x slime
 (setq inferior-lisp-program "/opt/sbcl/bin/sbcl")
 
 ;; Setting the diary's file.
