@@ -4,18 +4,26 @@
 ;;  SBCL - QuickLisp
 ;;--------------------------------------------------------------------
 
-;; QuickLisp es para SBCL.
+;; Nota: QuickLisp es para SBCL.
 ;;
 ;; Su metodo de instalacion lo puedes checar en:
+;;
 ;; https://www.quicklisp.org/beta/
 ;;
 ;; Pero rapidamente:
 ;;
-;; 1. Descarga el script "quicklist.lisp" y guardalo en $HOME/Projects
+;; 1. Descarga el script "quicklist.lisp" y guardalo en $HOME/Projects:
+;;
+;;    https://beta.quicklisp.org/quicklisp.lisp
+;;
 ;; 2. Carga el script:
+;;
 ;;    [$] sbcl --load $HOME/Projects/quiclist.lisp
+;;
 ;; 3. Ejectualo:
+;;
 ;;    sbcl> (quicklisp-quickstart:install)
+;;
 ;; 4. Sigue las instrucciones para agregar las extensiones.
 
 ;;--------------------------------------------------------------------
