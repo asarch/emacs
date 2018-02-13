@@ -1,24 +1,31 @@
 ;; $HOME/.emacs -*-emacs-lisp-*-
 
 ;;--------------------------------------------------------------------
-;; SLIME support
+;;  SBCL - QuickLisp
 ;;--------------------------------------------------------------------
 
-;; From: http://melpa.org/#/getting-started
-;; M-x package-refresh-contents
-;; M-x package-install RET slime RET
-
-;; NOTE
 ;; QuickLisp es para SBCL.
+;;
 ;; Su metodo de instalacion lo puedes checar en:
 ;; https://www.quicklisp.org/beta/
+;;
 ;; Pero rapidamente:
+;;
 ;; 1. Descarga el script "quicklist.lisp" y guardalo en $HOME/Projects
 ;; 2. Carga el script:
 ;;    [$] sbcl --load $HOME/Projects/quiclist.lisp
 ;; 3. Ejectualo:
 ;;    sbcl> (quicklisp-quickstart:install)
 ;; 4. Sigue las instrucciones para agregar las extensiones.
+
+;;--------------------------------------------------------------------
+;; SLIME Installation
+;;--------------------------------------------------------------------
+
+;; From: http://melpa.org/#/getting-started
+;;
+;; M-x package-refresh-contents
+;; M-x package-install RET slime RET
 
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -37,6 +44,13 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 ;;(package-initialize)
+
+;;--------------------------------------------------------------------
+;; SLIME - Configuration
+;;--------------------------------------------------------------------
+
+;; From: https://common-lisp.net/project/slime/doc/html/Installation.html#Installation
+(setq inferior-lisp-program "/opt/sbcl/bin/sbcl")
 
 ;; Setting the diary's file.
 ;; NOTE: This line MUST precede the next one
