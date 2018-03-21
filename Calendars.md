@@ -59,11 +59,11 @@ V
 
 Let's select the next period of the **Calendar**:
 
-| Key | Description        |
-|-----|:------------------:|
-| a   | For the next day   |
-| b   | For the next week  |
-| M-} | For the next month |
+| Key   | Description        |
+|-------|:------------------:|
+| `a`   | For the next day   |
+| `b`   | For the next week  |
+| `M-}` | For the next month |
  
  Let's stop to record the keyboard macro:
  
