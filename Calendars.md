@@ -1,30 +1,30 @@
-# Configuring Emacs and generating LaTeX files
+# Configuring Emacs and getting LaTeX files
 
-Let's define a new registry (`q`) with an initial value of `1`
+Let's define a new registry (`q`) with an initial value of `1`:
 
 ```
 C-u 1 C-x r n q
 ```
 
-Let's start Calendar:
+Let's start **Calendar**:
 
 ```
 M-u calendar
 ```
 
-Let's start to record keyboard macros:
+Let's start to record a keyboard macro:
 
 ```
 C-x (
 ```
 
-Now, let's generate the LaTeX file:
+Now, let's generate the **LaTeX** file:
 
-| Key     | Description                                  |
-|---------|:--------------------------------------------:|
-| `t d`   | for the current selected day in the Calendar |
-| `t w i` | For the current selected week                |
-| `t M`   | For the current selected month               |
+| Key     | Description                                       |
+|---------|:-------------------------------------------------:|
+| `t d`   | for the current selected day in the **Calendar**. |
+| `t w i` | For the current selected week.                    |
+| `t M`   | For the current selected month.                   |
 
 Let's save the file with corresponding file name:
 
@@ -32,7 +32,7 @@ Let's save the file with corresponding file name:
 C-x C-s [ day | week | month ]
 ```
 
-Let's insert the current value of the 'q' registry:
+Let's insert the current value of the `q` registry:
 
 ```
 C-x r i q
@@ -44,20 +44,20 @@ Let's add the file extension:
 .tex Ret
 ```
 
-Let's add by one the 'q' registry value:
+Let's add by one the `q` registry value:
 
 ```
 C-x r + q
 ```
 
-Let's select the Calendar buffer:
+Let's select the **Calendar** buffer:
 
 ```
 M-u buffer-menu
 V
 ```
 
-Let's select the next period of the Calendar:
+Let's select the next period of the **Calendar**:
 
 | Key | Description        |
 |-----|:------------------:|
@@ -65,7 +65,7 @@ Let's select the next period of the Calendar:
 | b   | For the next week  |
 | M-} | For the next month |
  
- Let's stop to record keyboard macros
+ Let's stop to record the keyboard macro:
  
  ```
  C-x )
@@ -93,25 +93,25 @@ Let's select the next period of the Calendar:
  done
  ```
  
- Let's render the LaTeX file into DVI:
+ Let's render the **LaTeX** file into **DVI**:
  
  ```
  $ find . -name '*.tex' -exec latex {} \;
  ```
  
- Let's convert the DVI files into PostScript format:
+ Let's convert the **DVI** files into **PostScript** format:
  
  ```
  $ find . -name '*.dvi' -exec dvips -o {}.ps -t letter {} \;
  ```
  
- Now, convert the PostScript files into PDF format:
+ Now, convert the **PostScript** files into **PDF** format:
  
  ```
  $ find . -name '*.ps' -exec ps2pdf {} \;
  ```
   
- To rename the file in secuence (day001.pdf, day002.pdf, etc) use this code, just change the value of the file_name variable:
+ To rename the file in secuence (`day001.pdf`, `day002.pdf`, etc) use this code, just change the value of the `$file_name` variable:
  
  ```sh
  #!/bin/mksh
@@ -137,8 +137,6 @@ for file in $( ls $file_name??.dvi.pdf | sort ); do
 	(( i++ ))
 done
 
-exit 1
-
 i=100
 
 for file in $( ls $file_name???.dvi.pdf | sort ); do
@@ -151,7 +149,7 @@ done
 ```
 # Getting resulting file
 
-To concat the PDF files:
+To concat the **PDF** files:
 
 ```
 $ gs -q -sPAPERSIZE=letter -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=agenda.pdf *.pdf
