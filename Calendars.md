@@ -1,20 +1,30 @@
-Let's define a new registry (q) with an initial value of 1 (one):
+# Configuring Emacs and generating LaTeX files
 
+Let's define a new registry (`q`) with an initial value of `1`
+
+```
 C-u 1 C-x r n q
+```
 
 Let's start Calendar:
 
+```
 M-u calendar
+```
 
 Let's start to record keyboard macros:
 
+```
 C-x (
+```
 
 Now, let's generate the LaTeX file:
 
-t d for the current selected day in the Calendar.
-t w i For the current selected week.
-t M For the current selected month.
+| Key     | Description                                  |
+|---------|:--------------------------------------------:|
+| `t d`   | for the current selected day in the Calendar |
+| `t w i` | For the current selected week                |
+| `t M`   | For the current selected month               |
 
 Let's save the file with corresponding file name:
 
@@ -51,8 +61,11 @@ Let's select the next period of the Calendar:
  
  C-u [ 365 | 52 | 12 ] C-x e
  
+ # Rendering LaTeX files
+ 
  To fix the problem of the paper margins with the generated day, use this code:
  
+ ```sh
  #!/bin/mksh
  
  for file in $( ls day*.tex | sort ); do
@@ -62,21 +75,29 @@ Let's select the next period of the Calendar:
  wq
  EOS
  done
+ ```
  
  Let's render the LaTeX file into DVI:
  
+ ```
  $ find . -name '*.tex' -exec latex {} \;
+ ```
  
  Let's convert the DVI files into PostScript format:
  
+ ```
  $ find . -name '*.dvi' -exec dvips -o {}.ps -t letter {} \;
+ ```
  
  Now, convert the PostScript files into PDF format:
  
+ ```
  $ find . -name '*.ps' -exec ps2pdf {} \;
- 
+ ```
+  
  To rename the file in secuence (day001.pdf, day002.pdf, etc) use this code, just change the value of the file_name variable:
  
+ ```
  #!/bin/mksh
 
 file_name="month" # [ day | week | month ]
@@ -111,11 +132,12 @@ for file in $( ls $file_name???.dvi.pdf | sort ); do
 	mv -v $file $new_name
 	(( i++ ))
 done
- 
- To concat the PDF files:
- 
- $ gs -q -sPAPERSIZE=letter -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=agenda.pdf *.pdf
- GS> Ctrl+D
- 
- 
- 
+```
+# Getting resulting file
+
+To concat the PDF files:
+
+```
+$ gs -q -sPAPERSIZE=letter -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=agenda.pdf *.pdf
+GS> Ctrl+D
+ ```
