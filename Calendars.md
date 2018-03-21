@@ -28,38 +28,54 @@ Now, let's generate the LaTeX file:
 
 Let's save the file with corresponding file name:
 
+```
 C-x C-s [ day | week | month ]
+```
 
 Let's insert the current value of the 'q' registry:
 
+```
 C-x r i q
+```
 
 Let's add the file extension:
 
+```
 .tex Ret
+```
 
 Let's add by one the 'q' registry value:
 
+```
 C-x r + q
+```
 
 Let's select the Calendar buffer:
 
+```
 M-u buffer-menu
 V
+```
 
 Let's select the next period of the Calendar:
 
- For the next day.
- For the next week.
- M-} For the next month.
+| Key | Description        |
+|-----|:------------------:|
+| a   | For the next day   |
+| b   | For the next week  |
+| M-} | For the next month |
  
  Let's stop to record keyboard macros
  
+ ```
  C-x )
+ ```
  
  Now repeat the secuence as you wish (for all the days, for all the weeks or for all the months in the year):
  
+ ```
  C-u [ 365 | 52 | 12 ] C-x e
+ ```
  
  # Rendering LaTeX files
  
@@ -97,7 +113,7 @@ Let's select the next period of the Calendar:
   
  To rename the file in secuence (day001.pdf, day002.pdf, etc) use this code, just change the value of the file_name variable:
  
- ```
+ ```sh
  #!/bin/mksh
 
 file_name="month" # [ day | week | month ]
