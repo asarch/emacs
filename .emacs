@@ -125,6 +125,9 @@
 ;; Save history files
 (savehist-mode 1)
 
+;; Disable #*# files
+(setq auto-save-default nil)
+
 ;; Highlight the current line
 (global-hl-line-mode)
 
