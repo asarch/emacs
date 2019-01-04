@@ -140,6 +140,6 @@
 (show-paren-mode 1)
 
 ;; From pjb@#lisp.FN
-;; To connect Emacs to Android's CL REPL
+;; To connect Emacs to Android's CL REPL (you need to install also the slime-company package):
 (setf slime-contribs '(slime-fancy slime-indentation slime-company slime-asdf slime-sbcl-exts slime-scratch))
 (slime-setup)
