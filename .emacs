@@ -138,3 +138,8 @@
 ;; From pjb@#lisp.FN: https://www.emacswiki.org/emacs/CategoryParentheses
 ;; Show Paren Mode: https://www.emacswiki.org/emacs/ShowParenMode
 (show-paren-mode 1)
+
+;; From pjb@#lisp.FN
+;; To connect Emacs to Android's CL REPL
+(setf slime-contribs '(slime-fancy slime-indentation slime-company slime-asdf slime-sbcl-exts slime-scratch))
+(slime-setup)
