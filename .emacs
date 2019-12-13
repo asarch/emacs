@@ -35,6 +35,8 @@
 ;; M-x package-refresh-contents
 ;; M-x package-install RET slime RET
 
+;; You can run the command ‘package-refresh-contents’ with M-x pa-r- RET
+
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
