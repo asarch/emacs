@@ -139,6 +139,9 @@
 ;; More info: https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html
 (desktop-save-mode 1)
 
+;; Auto-revert mode
+(global-auto-revert-mode)
+
 ;; From pjb@#lisp.FN: https://www.emacswiki.org/emacs/CategoryParentheses
 ;; Show Paren Mode: https://www.emacswiki.org/emacs/ShowParenMode
 (show-paren-mode 1)
