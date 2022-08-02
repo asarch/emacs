@@ -124,7 +124,7 @@
 ;;(set-default-font "LiberationMono-11")
 ;;(set-default-font "LiberationMono-11")
 
-(set-frame-font "LiberationMono 10" nil t)
+;;(set-frame-font "LiberationMono 10" nil t)
 
 ;; Save history files
 (savehist-mode 1)
@@ -139,12 +139,12 @@
 ;; More info: https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html
 (desktop-save-mode 1)
 
-;; Auto-revert mode
-(global-auto-revert-mode)
-
 ;; From pjb@#lisp.FN: https://www.emacswiki.org/emacs/CategoryParentheses
 ;; Show Paren Mode: https://www.emacswiki.org/emacs/ShowParenMode
 (show-paren-mode 1)
+
+;; Auto-revert mode
+(global-auto-revert-mode)
 
 ;; From pjb@#lisp.FN
 ;; To connect Emacs to Android's CL REPL (you need to install also the slime-company package):
